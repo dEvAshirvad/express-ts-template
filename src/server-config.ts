@@ -1,9 +1,9 @@
 import express, { Express } from 'express';
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
-import IHttpResponse from './types/http-response';
-import { xApiValidator } from './middlewares/authenticate';
+import { IHttpResponse } from './types/http-response';
 import { errorHandler } from './middlewares/errorHandler';
+import router from './modules';
 const timestamp = new Date().toISOString();
 
 export function serverConfig(app: Express) {
@@ -22,7 +22,7 @@ export function serverConfig(app: Express) {
     } satisfies IHttpResponse);
   });
 
-  app.use('/api/v1', xApiValidator);
+  app.use(router);
 
   app.use(errorHandler);
 }

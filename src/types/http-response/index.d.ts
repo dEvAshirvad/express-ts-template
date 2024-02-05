@@ -1,4 +1,4 @@
-export default interface IHttpResponse {
+export interface IHttpResponse {
   title: string;
   message: string;
   success: boolean;
@@ -7,4 +7,13 @@ export default interface IHttpResponse {
   //   isOperational: boolean;
 }
 
-export type IAPIError = IHttpResponse;
+export interface IHttpResponseWithData {
+  title: string;
+  message: string;
+  data: Record<string, string>;
+  success: boolean;
+  status: number;
+  timestamp: string;
+}
+
+export type IHttpResponse = IHttpResponse;

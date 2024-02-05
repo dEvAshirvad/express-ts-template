@@ -10,4 +10,6 @@ export async function xApiValidator(req: Request, res: Response, next: NextFunct
   if (!apiKey && apiKey !== process.env.xApiKey) {
     return next(new APIError(USER_ERRORS.AUTHORIZATION_ERROR));
   }
+
+  next();
 }

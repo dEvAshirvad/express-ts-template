@@ -1,5 +1,5 @@
 import { HttpStatusCode, IAPIError } from '../types/api-error';
-import IHttpResponse from '../types/http-response';
+import { IHttpResponse } from '../types/http-response';
 const timestamp = new Date().toISOString();
 
 export class APIError extends Error {
