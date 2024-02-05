@@ -1,4 +1,4 @@
-import express, { Request } from 'express';
+import express from 'express';
 const authRouter = express.Router();
 import { authController } from './auth.controller';
 import { upload } from '../../config/multerConfig';
