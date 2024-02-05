@@ -15,6 +15,7 @@
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended"
   ],
+  "ignorePatterns": ["dist/"],
   "rules": {
     // Add specific rules or overrides here
     "@typescript-eslint/explicit-module-boundary-types": "off",
