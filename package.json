@@ -1,17 +1,16 @@
 {
-	"name": "ts-node-auth",
-	"version": "1.0.0",
-	"description": "",
-	"main": "index.js",
-	"engines": {
-		"node": ">=14.0.0",
-		"yarn": ">=1.22.0",
-		"npm": "please-use-yarn"
-	},
-	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
-	},
-	"keywords": [],
-	"author": "",
-	"license": "ISC"
+  "name": "ts-node-auth",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Ashirvad Satapathy <ashirvad.satapathy01@gmail.com>",
+  "license": "MIT",
+  "dependencies": {},
+  "scripts": {
+    "lint": "yarn lint",
+    "prettier": "prettier --write ."
+  },
+  "devDependencies": {
+    "eslint": "^8.56.0",
+    "prettier": "^3.2.5"
+  }
 }
