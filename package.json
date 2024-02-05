@@ -17,7 +17,7 @@
     "prettier": "prettier --write .",
     "dev": "NODE_ENV=local nodemon src/index.ts",
     "build": "tsc",
-    "start": "node dist/index.js",
+    "start": "NODE_ENV=prod node dist/index.js",
     "prepare": "husky install"
   },
   "devDependencies": {
