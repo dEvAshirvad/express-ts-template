@@ -4,6 +4,7 @@ import cors from 'cors';
 import { IHttpResponse } from './types/http-response';
 import { errorHandler } from './middlewares/errorHandler';
 import router from './modules';
+import deserializeUser from './middlewares/deserializeUser';
 const timestamp = new Date().toISOString();
 
 export function serverConfig(app: Express) {
@@ -11,6 +12,8 @@ export function serverConfig(app: Express) {
   app.use(express.urlencoded({ extended: true, limit: '2048mb' }));
   app.use(express.json({ limit: '2048mb' }));
   app.use(cors());
+
+  app.use(deserializeUser);
 
   app.route('/api-status').get((req, res) => {
     res.status(200).json({
@@ -23,6 +26,5 @@ export function serverConfig(app: Express) {
   });
 
   app.use(router);
-
   app.use(errorHandler);
 }

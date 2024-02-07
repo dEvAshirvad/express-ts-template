@@ -1,3 +1,5 @@
+import { Response } from 'express';
+
 export interface IHttpResponse {
   title: string;
   message: string;
@@ -7,9 +9,15 @@ export interface IHttpResponse {
   //   isOperational: boolean;
 }
 
+export interface IHttpResponseInput {
+  res: Response;
+
+  status: number;
+
+  data: Record<string, string>;
+}
+
 export interface IHttpResponseWithData {
-  title: string;
-  message: string;
   data: Record<string, string>;
   success: boolean;
   status: number;

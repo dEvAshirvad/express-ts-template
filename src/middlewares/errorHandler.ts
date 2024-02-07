@@ -3,11 +3,7 @@ import { APIError } from '../errors/APIError';
 
 export function errorHandler(error: Error, req: Request, res: Response, next: NextFunction) {
   if (error instanceof APIError) {
-    return res.status(error.statusCode).json({
-      title: error.title,
-      status: error.statusCode,
-      message: error.message,
-    });
+    return res.status(error.statusCode).json(error.serializeError());
   }
   res.status(500).json({
     success: false,

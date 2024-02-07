@@ -21,7 +21,17 @@ const USER_ERRORS = {
     TITLE: 'ATTACHMENT_IN_USE',
     MESSAGE: 'The requested attachment could not be deleted.',
   },
-} satisfies {
+  USER_ALREADY_EXISTS: {
+    STATUS: 400,
+    TITLE: 'USER_ALREADY_EXISTS',
+    MESSAGE: 'The user already exists. Please use a different email address or username',
+  },
+  INVALID_CREDENTIALS: {
+    STATUS: 401,
+    TITLE: 'INVALID_CREDENTIALS',
+    MESSAGE: 'Invalid email or password. Please try again.',
+  },
+} as {
   [error: string]: IAPIError;
 };
 
